@@ -1,8 +1,7 @@
-// sudo chmod +x node_modules/.bin/react-scripts
-import Expenses from "./components/Expenses";
-import NewExpense from "./components/newExpense/NewExpense";
+import Expenses from "./components/expenses/Expenses";
+import NewExpense from "./components/newExpense/newExpense";
 
-
+ 
 function App() {
   const expenses = [
     {
@@ -26,14 +25,16 @@ function App() {
     },
   ];
 
-  const addExpenseHandler = (expense) => {
+  const addExpenseHandler = expense => {
     console.log("in app.js");
-    console.log(expenses);
-  }
+    console.log(expense);
+  }; 
+
+  
 
   return (
     <div>
-      <NewExpense onAddExpense = {addExpenseHandler}/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
 
     </div>
